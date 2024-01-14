@@ -1,0 +1,15 @@
+<div data-current-user-id="<%= current_user.id %>">
+  <%= form_with model: (@message), remote: true, local: false do |f| %>
+    <%= f.hidden_field :chat_id, value: @chat.id %>
+    <div>
+      <%= f.label :message %>
+      <%= f.text_field :body %>
+      <%= f.submit "Send" %>
+    </div>
+
+  <% end %>
+
+  <div class="messages">
+    <%= render @messages %>
+  </div>
+</div>

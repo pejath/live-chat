@@ -1,0 +1,7 @@
+<div style="border: 1px solid black" data-message-id="<%= message.id %>">
+  <p>User: <%= message.user.nickname %></p>
+  <p><%= message.body %></p>
+  <% if current_user == message.user %>
+    <%= link_to "Delete", message, method: :delete, remote: true, local: false %>
+  <% end %>
+</div>
